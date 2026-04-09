@@ -2,7 +2,7 @@
 #include <cuda_runtime.h>
 
 // ============================================================
-//  Constraint Propagation Solver  [TODO]
+//  Constraint Propagation Solver  [TODO] Sam
 //  Strategy: run naked-singles pass before backtracking.
 //  Cells with only one candidate are filled immediately.
 //  Easy/medium puzzles may solve with zero backtracking.

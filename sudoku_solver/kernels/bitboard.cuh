@@ -2,7 +2,7 @@
 #include <cuda_runtime.h>
 
 // ============================================================
-//  Bitboard Sudoku Solver  [TODO]
+//  Bitboard Sudoku Solver  [TODO] Jakob
 //  Strategy: encode row/col/box constraints as 9-bit bitmasks.
 //  candidate(cell) = ~(row_mask[r] | col_mask[c] | box_mask[b]) & 0x1FF
 //  Validity check = single AND vs. 27 array reads in naive.

@@ -2,7 +2,7 @@
 #include <cuda_runtime.h>
 
 // ============================================================
-//  Warp-Parallel Sudoku Solver  [TODO]
+//  Warp-Parallel Sudoku Solver  [TODO] Jason
 //  Strategy: assign 1 warp (32 threads) per puzzle.
 //  Threads cooperate on constraint checking via warp shuffles.
 //  Key intrinsics: __ballot_sync, __any_sync, __shfl_sync
