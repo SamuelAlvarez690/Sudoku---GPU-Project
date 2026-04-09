@@ -17,9 +17,9 @@ sudoku_solver/
 ├── sudoku_bench.cu          ← main benchmark driver
 ├── kernels/
 │   ├── naive.cuh            ← Baseline: 1 thread per puzzle, sequential backtracking
-│   ├── bitboard.cuh         ← TODO: bitmask constraint encoding
-│   ├── constraint_prop.cuh  ← TODO: naked singles + backtracking
-│   └── warp_parallel.cuh    ← TODO: 1 warp (32 threads) per puzzle
+│   ├── bitboard.cuh         ← TODO: bitmask constraint encoding implemented by Jakob
+│   ├── constraint_prop.cuh  ← TODO: naked singles + backtracking implemented by Sam
+│   └── warp_parallel.cuh    ← TODO: 1 warp (32 threads) per puzzle implemented by Sam
 └── utils/
     ├── timer.h              ← CUDA event timer + error check macros
     └── puzzle_io.h          ← puzzle bank, loader, validator, batch generator
