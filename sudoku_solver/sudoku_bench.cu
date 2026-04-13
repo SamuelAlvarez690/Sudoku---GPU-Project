@@ -23,7 +23,7 @@
 // Uncomment as you implement each kernel:
 #include "kernels/bitboard.cuh"
 // #include "kernels/constraint_prop.cuh"
-// #include "kernels/warp_parallel.cuh"
+#include "kernels/warp_parallel.cuh"
 
 // ─── Benchmark config ────────────────────────────────────────────────────────
 static const int BATCH_SIZES[] = {64, 256, 1024};
@@ -42,7 +42,7 @@ static KernelEntry KERNELS[] = {
     { "Naive",           launch_naive,    64  },
     { "Bitboard",        launch_bitboard, 128 },
     // { "Constraint Prop", launch_cp,        64 },
-    // { "Warp Parallel",   launch_warp,     256 },
+    { "Warp Parallel",   launch_warp,     256 },
 };
 static const int NUM_KERNELS = (int)(sizeof(KERNELS) / sizeof(KERNELS[0]));
 
