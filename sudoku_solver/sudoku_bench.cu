@@ -21,7 +21,7 @@
 #include "utils/puzzle_io.h"
 #include "kernels/naive.cuh"
 // Uncomment as you implement each kernel:
-// #include "kernels/bitboard.cuh"
+#include "kernels/bitboard.cuh"
 // #include "kernels/constraint_prop.cuh"
 // #include "kernels/warp_parallel.cuh"
 
@@ -40,7 +40,7 @@ struct KernelEntry {
 
 static KernelEntry KERNELS[] = {
     { "Naive",           launch_naive,    64  },
-    // { "Bitboard",        launch_bitboard, 128 },
+    { "Bitboard",        launch_bitboard, 128 },
     // { "Constraint Prop", launch_cp,        64 },
     // { "Warp Parallel",   launch_warp,     256 },
 };
@@ -109,6 +109,9 @@ int main() {
 
         for (int ki = 0; ki < NUM_KERNELS; ki++) {
             auto& K = KERNELS[ki];
+
+            CUDA_CHECK(cudaMemset(d_solutions, 0, N*81*sizeof(int)));
+            CUDA_CHECK(cudaMemset(d_solved,    0, N*sizeof(bool)));
 
             // Warmup
             for (int r = 0; r < WARMUP_REPS; r++) {
