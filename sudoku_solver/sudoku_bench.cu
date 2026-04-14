@@ -22,7 +22,7 @@
 #include "kernels/naive.cuh"
 // Uncomment as you implement each kernel:
 #include "kernels/bitboard.cuh"
-// #include "kernels/constraint_prop.cuh"
+#include "kernels/constraint_prop.cuh"
 #include "kernels/warp_parallel.cuh"
 
 // ─── Benchmark config ────────────────────────────────────────────────────────
@@ -41,7 +41,7 @@ struct KernelEntry {
 static KernelEntry KERNELS[] = {
     { "Naive",           launch_naive,    64  },
     { "Bitboard",        launch_bitboard, 128 },
-    // { "Constraint Prop", launch_cp,        64 },
+    { "Constraint Prop", launch_cp,        64 },
     { "Warp Parallel",   launch_warp,     256 },
 };
 static const int NUM_KERNELS = (int)(sizeof(KERNELS) / sizeof(KERNELS[0]));
